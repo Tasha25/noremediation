@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  database: noremediation
+  username: natashagreen
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: noremediation
+  username: natashagreen
+  password:
+  host: localhost

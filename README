@@ -1,0 +1,92 @@
+Questions to ask Chan:
+1. Is there a way to create a rake file to create the folders I want?
+
+2. Is there a better way to do the layouts? Should I have a controller? http://www.sitepoint.com/build-a-sinatra-mvc-framework/
+
+3. Is there a way to setup ENV['DATABASE_URL'] in the bash file? (sublime ~/.bash_profile)
+
+4.
+
+development:
+  adapter: postgresql
+  database: noremediation
+  username: <%= ENV['PG_USERNAME'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: noremediation
+  username: <%= ENV['PG_USERNAME'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
+  host: localhost
+
+  Question: This returned
+FATAL:  role "<%= ENV['PG_USERNAME'] %>" does not exist
+ when I used <%= ENV['PG_PASSWORD'] %>
+
+ I had to put the following in database.yml
+
+==code
+development:
+  adapter: postgresql
+  database: noremediation
+  username: natashagreen
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: noremediation
+  username: natashagreen
+  password:
+  host: localhost
+==code end
+==code1
+require 'bundler/setup'
+require 'active_record'
+
+include ActiveRecord::Tasks
+
+db_dir = File.expand_path('../db', __FILE__)
+config_dir = File.expand_path('../config', __FILE__)
+
+DatabaseTasks.env = ENV['ENV'] || :development
+DatabaseTasks.db_dir = db_dir
+DatabaseTasks.database_configuration = YAML.load(File.read(File.join(config_dir, 'database.yml')))
+DatabaseTasks.migrations_paths = File.join(db_dir, 'migrate')
+
+task :environment do
+  ActiveRecord::Base.configurations = DatabaseTasks.database_configuration
+  ActiveRecord::Base.establish_connection DatabaseTasks.env
+end
+
+load 'active_record/railties/databases.rake'
+
+===code end
+
+Versus having:
+
+==code2
+ require './main'
+ require 'sinatra/activerecord/rake'
+
+==code end
+
+Why was that? You will get an "uninitialized constant ActiveRecord::Tasks::DatabaseTasks::Rails" if you use code2 and try to run
+$rake db:migrate
+
+5.
+Do I have to open and clos connections like I had to do in my other apps?
+before do
+  ActiveRecord::Base.establish_connection(
+    :adapter =>'postgresql',
+    :host => 'localhost',
+    :database => 'letsintervene'
+   )
+end
+
+after do
+  ActiveRecord::Base.connection.close
+end
+
