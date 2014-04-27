@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/activerecord'
@@ -17,3 +18,22 @@ require 'bcrypt'
 require './routes/init'
 require  './helpers/init'
 require  './models/init'
+
+  get '/' do
+    erb :"index.html" , :layout => false
+  end
+
+  get '/about-us' do
+    erb :"about_us.html" , :layout => false
+  end
+
+    get '/services' do
+    erb :"services.html", :layout => false #need help changing this into layout.erb but the roll over menu is not working.
+  end
+
+    get '/trial' do
+    erb :"trail.html" , :layout => false
+  end
+  get '/contacts' do
+    erb :"contacts.html" , :layout => false
+  end
