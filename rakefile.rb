@@ -1,6 +1,5 @@
 require './main'
  require 'sinatra/activerecord/rake'
-
 require 'bundler/setup'
 require 'active_record'
 

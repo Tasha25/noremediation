@@ -42,6 +42,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rake (10.1.0)
     rmagick (2.13.2)
     sinatra (1.4.5)
       rack (~> 1.4)
@@ -80,6 +81,7 @@ DEPENDENCIES
   mini_magick
   pg
   pry
+  rake
   rmagick
   sinatra
   sinatra-activerecord
