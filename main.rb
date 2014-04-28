@@ -37,3 +37,7 @@ require  './models/init'
   get '/contacts' do
     erb :"contacts.html" , :layout => false
   end
+
+   get '/sign-up' do
+    erb :"sign_up.html" , :layout => false
+  end
