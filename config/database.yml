@@ -1,13 +1,13 @@
 development:
   adapter: postgresql
-  database: noremediation
+  database: <%= ENV['DATABASE_URL'] %>
   username: natashagreen
   password:
   host: localhost
 
 production:
   adapter: postgresql
-  database: noremediation
+  database: <%= ENV['DATABASE_URL'] %>
   username: natashagreen
   password:
   host: localhost
