@@ -10,7 +10,6 @@ require 'uri'
 require 'open-uri'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
-require 'rmagick'
 require 'mini_magick'
 require 'bcrypt'
 
