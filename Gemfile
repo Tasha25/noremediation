@@ -11,7 +11,6 @@ gem 'pg'
 gem 'pry'
 
 gem 'carrierwave'
-gem 'rmagick'
 gem 'mini_magick'
 gem 'bcrypt'
 gem 'rake'
