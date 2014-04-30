@@ -87,7 +87,6 @@ DEPENDENCIES
   pg
   pry
   rake
-  rmagick
   sinatra
   sinatra-activerecord
   sinatra-flash
