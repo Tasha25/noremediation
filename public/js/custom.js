@@ -1,13 +1,13 @@
 /***************************************************
 			SuperFish Menu
-***************************************************/	
+***************************************************/
 // initialise plugins
 	jQuery.noConflict()(function(){
 		jQuery('ul.menu').superfish();
 	});
-	
-	
-	
+
+
+
 jQuery.noConflict()(function($) {
   if ($.browser.msie && $.browser.version.substr(0,1)<7)
   {
@@ -26,11 +26,11 @@ jQuery.noConflict()(function($){
       // Create the dropdown base
       $("<select />").appendTo("nav");
 
-      // Create default option "Go to..." 
+      // Create default option "Go to..."
       $("<option />", {
          "selected": "selected",
          "value"   : "",
-         "text"    : "Please choose page" 
+         "text"    : "Please choose page"
       }).appendTo("nav select");
       //new dropdown menu
       $("nav a").each(function() {
@@ -52,7 +52,7 @@ jQuery.noConflict()(function($){
                 "value"   : el.attr("href"),
                 "text"    : perfix + el.text()
                 }).appendTo("nav select");
-				
+
 			  $("nav select").change(function() {
 				window.location = $(this).find("option:selected").val();
 			  });
@@ -62,7 +62,7 @@ jQuery.noConflict()(function($){
 
 
 jQuery.noConflict()(function($){
-	$(document).ready(function() {  
+	$(document).ready(function() {
 		$("a[rel^='prettyPhoto']").prettyPhoto({opacity:0.80,default_width:200,default_height:344,hideflash:false,modal:false,social_tools:false});
 	});
 });
@@ -78,7 +78,7 @@ jQuery.noConflict()(function($){
 
 jQuery.noConflict()(function($){
 	$(".testimonialrotator").testimonialrotator({
-		settings_slideshowTime:3
+		settings_slideshowTime:6
 	});
 });
 
@@ -87,25 +87,25 @@ jQuery.noConflict()(function($){
 //**********************************
 jQuery.noConflict()(function($){
 var $container = $('#portfolio');
-		
+
 if($container.length) {
 	$container.waitForImages(function() {
-		
+
 		// initialize isotope
 		$container.isotope({
 		  itemSelector : '.block',
 		  layoutMode : 'fitRows'
 		});
-		
+
 		// filter items when filter link is clicked
 		$('#filters a').click(function(){
 		  var selector = $(this).attr('data-filter');
 		  $container.isotope({ filter: selector });
 		  $(this).removeClass('filter_button').addClass('filter_button filter_current').siblings().removeClass('filter_button filter_current').addClass('filter_button');
-		  
+
 		  return false;
 		});
-		
+
 	},null,true);
 }});
 
@@ -114,29 +114,29 @@ if($container.length) {
 //**********************************
 jQuery.noConflict()(function($){
 var $container = $('#portfolio_sidebar');
-		
+
 if($container.length) {
 	$container.waitForImages(function() {
-		
+
 		// initialize isotope
 		$container.isotope({
 		  itemSelector : '.block',
 		  layoutMode : 'fitRows'
 		});
-		
+
 		// filter items when filter link is clicked
 		$('#filters_sidebar a').click(function(){
 		  var selector = $(this).attr('data-filter');
 		  $container.isotope({ filter: selector });
 		  $(this).removeClass('filter_sidebar').addClass('filter_sidebar filter_sidebar_current').siblings().removeClass('filter_sidebar filter_sidebar_current').addClass('filter_sidebar');
-		  
+
 		  return false;
 		});
-		
+
 	},null,true);
 }});
 
-		 
+
 /***************************************************
 			SlideOut
 ***************************************************/
@@ -145,7 +145,7 @@ jQuery.noConflict()(function($){
                  tabHandle: '.handle',                              //class of the element that will be your tab
                  pathToTabImage: 'http://orange-idea.com/assets/commander/com-cog.png',          //path to the image for the tab (optionaly can be set using css)
                  imageHeight: '100px',                               //height of tab image
-                 imageWidth: '50px',                               //width of tab image    
+                 imageWidth: '50px',                               //width of tab image
                 tabLocation: 'left',                               //side of screen where tab lives, top, right, bottom, or left
                  speed: 300,                                        //speed of animation
                  action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
@@ -153,5 +153,5 @@ jQuery.noConflict()(function($){
                  fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
              });
          });
-		 
+
 

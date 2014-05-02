@@ -19,24 +19,17 @@ require  './helpers/init'
 require  './models/init'
 
   get '/' do
-    erb :"index.html" , :layout => false
+    erb :"index.html"
   end
 
   get '/about-us' do
-    erb :"about_us.html" , :layout => false
+    erb :"about_us.html"
   end
 
     get '/services' do
-    erb :"services.html", :layout => false #need help changing this into layout.erb but the roll over menu is not working.
-  end
-
-    get '/trial' do
-    erb :"trail.html" , :layout => false
-  end
-  get '/contacts' do
-    erb :"contacts.html" , :layout => false
+    erb :"services.html"
   end
 
    get '/sign-up' do
-    erb :"sign_up.html" , :layout => false
+    erb :"sign_up.html"
   end

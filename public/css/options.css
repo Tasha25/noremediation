@@ -87,6 +87,10 @@ border-radius: 0px 0px;
 border-radius: 0px;
 }
 
+.page_head .menu li a.current{
+background: #ec5923;
+}
+
 .page_head .menu ul li:first-child a:hover {
 -moz-border-radius: 0px 0px 0px 0px !important;
 -o-border-radius: 0px 0px  0px 0px !important;
