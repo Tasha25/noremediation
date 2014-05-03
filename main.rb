@@ -33,3 +33,7 @@ require  './models/init'
    get '/sign-up' do
     erb :"sign_up.html"
   end
+
+     get '/trial' do
+    erb :"trial.html"
+  end
