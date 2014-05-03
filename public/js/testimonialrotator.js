@@ -2,12 +2,12 @@
 (function($) {
 
 	$.fn.testimonialrotator = function(o) {
-		
+
 		var defaults = {
 			settings_slideshowTime : '5',
 			settings_autoHeight : 'on'
 		}
-		
+
 		o = $.extend(defaults, o);
 		this.each( function() {
 			var cthis = jQuery(this);
@@ -41,4 +41,3 @@
 		})
 	}
 })(jQuery)
-	
