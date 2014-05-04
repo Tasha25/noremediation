@@ -35,5 +35,5 @@ require  './models/init'
   end
 
      get '/trial' do
-    erb :"trial.html"
+    erb :"trial.html", :layout => false
   end
